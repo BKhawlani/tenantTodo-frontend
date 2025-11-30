@@ -1,0 +1,118 @@
+/* ===========================
+   BASE LAYOUT
+   =========================== */
+.layout-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f6fa;
+}
+
+/* ===========================
+   SIDEBAR
+   =========================== */
+.sidebar {
+  width: 250px;
+  background: #1a1e30;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+.navbar {
+  height: 70px;
+  background: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 25px;
+
+  position: fixed;
+  left: 250px;
+  top: 0;
+  width: calc(100% - 250px);
+
+  border-bottom: 1px solid #ddd;
+  z-index: 15;
+}
+
+/* ===========================
+   CONTENT
+   =========================== */
+.layout-content {
+  margin-left: 250px;      /* المساحة بجانب الـ Sidebar */
+  padding-top: 90px;       /* مساحة للـ Navbar */
+  padding: 90px 25px 25px;
+
+  flex: 1;
+  overflow-x: hidden;
+}
+
+.content-area {
+  width: 100%;
+  height: auto;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 200px;
+  }
+  .navbar {
+    left: 200px;
+    width: calc(100% - 200px);
+  }
+  .layout-content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 170px;
+  }
+  .navbar {
+    left: 170px;
+    width: calc(100% - 170px);
+  }
+  .layout-content {
+    margin-left: 170px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 140px;
+  }
+  .navbar {
+    left: 140px;
+    width: calc(100% - 140px);
+  }
+  .layout-content {
+    margin-left: 140px;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    width: 110px;
+  }
+  .navbar {
+    left: 110px;
+    width: calc(100% - 110px);
+  }
+  .layout-content {
+    margin-left: 110px;
+  }
+}

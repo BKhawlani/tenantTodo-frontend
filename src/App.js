@@ -1,24 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
+import DashboardPage from "./pages/DashboardPage";
+import AddTaskPage from "./pages/AddTaskPage";
+import Today from "./pages/Today";
+import Upcoming from "./pages/Upcoming";
+import Completed from "./pages/Completed";
+import Overdue from "./pages/Overdue";
+
+import PasswordReset from "./pages/resetPassword";
+import ForgotPassword from "./pages/forgot_password";
+
+import ProtectedRoute from "./routes/ProtectedRoute";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import AdminRoute from "./routes/AdminRoute";
+import AdminPage from "./pages/AdminPage";
+import Profile from "./pages/Profile";
+import Statistics from "./pages/Statistics";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+
+          {/* Public Routes */}
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<PasswordReset />} />
+
+          {/* Protected Routes */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/today" element={<Today />} />
+            <Route path="/upcoming" element={<Upcoming />} />
+            <Route path="/completed" element={<Completed />} />
+            <Route path="/overdue" element={<Overdue />} />
+            <Route path="/add-task" element={<AddTaskPage />} />
+          </Route>
+          <Route element={<AdminRoute />}>
+  <Route path="/admin" element={<AdminPage />} />
+
+</Route>
+<Route element={<ProtectedRoute />}>
+  <Route path="/profile" element={<Profile />} />
+</Route>
+
+
+
+<Route path="/statistics" element={<Statistics />} />
+
+        </Routes>
+      </BrowserRouter>
+
+      <ToastContainer position="top-right" theme="dark" />
+    </>
   );
 }
 
