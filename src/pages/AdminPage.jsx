@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import "./AdminPage.css";
+import { useNavigate } from "react-router-dom";
+const navigate = useNavigate();
 
 function AdminPage() {
   const [users, setUsers] = useState([]);
@@ -96,6 +98,12 @@ useEffect(() => {
           <p>{users.filter((u) => u.role === "admin").length || 1}</p>
         </div>
       </div>
+        <button 
+    className="dashboard-btn" 
+    onClick={() => navigate("/dashboard")}
+  >
+    Dashboard
+  </button>
             <button className="logout-btn" onClick={handleLogout}>
   Logout
 </button>
