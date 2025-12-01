@@ -99,16 +99,24 @@ useEffect(() => {
           <p>{users.filter((u) => u.role === "admin").length || 1}</p>
         </div>
       </div>
-        <button 
+
+      <div className="admin-actions">
+  <button 
     className="dashboard-btn" 
     onClick={() => navigate("/dashboard")}
   >
     Dashboard
   </button>
-            <button className="logout-btn" onClick={handleLogout}>
-  Logout
-</button>
 
+  <button 
+    className="logout-btn" 
+    onClick={handleLogout}
+  >
+    Logout
+  </button>
+</div>
+
+       
 
       {/* USERS TABLE */}
       <div className="table-container">
