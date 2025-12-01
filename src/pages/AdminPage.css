@@ -158,3 +158,9 @@
 .logout-btn:hover,.dashboard-btn:hover {
   background: #4338CA;
 }
+.admin-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
