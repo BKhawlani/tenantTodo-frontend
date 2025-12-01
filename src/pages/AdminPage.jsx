@@ -1,10 +1,11 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import "./AdminPage.css";
-import { useNavigate } from "react-router-dom";
-const navigate = useNavigate();
 
 function AdminPage() {
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
 const handleDelete = async (id) => {
   if (!window.confirm("Are you sure you want to delete this user?")) return;
