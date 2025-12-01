@@ -11,8 +11,10 @@ import {
   FiMenu,
   FiX,
   FiActivity,
-  
+
 } from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
+
 import "./sidebar.css";
 
 function Sidebar() {
@@ -42,6 +44,7 @@ function Sidebar() {
     { path: "/overdue", icon: FiAlertOctagon, label: "Overdue" },
     { path: "/completed", icon: FiCheckCircle, label: "Completed" ,},
     { path: "/statistics", icon: FiActivity, label: "Statistics" ,},
+    { path: "/profile", icon: CgProfile, label: "Profile" ,}
   ];
 
   return (

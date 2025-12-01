@@ -1,58 +1,56 @@
+/* ============================
+   NAVBAR — DESKTOP DEFAULT
+   ============================ */
 .navbar-modern {
   position: fixed;
   top: 0;
-  left: 260px; 
+  left: 260px;                  /* يظهر بجانب الـ Sidebar */
   right: 0;
   height: 70px;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 25px;
   z-index: 10;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Cancel search box */
+/* مساحة فارغة يسار navbar (للبحث أو غيره) */
 .empty-space {
   width: 50px;
 }
 
-/* Right side */
+/* ============================
+   RIGHT SIDE (Profile + Icons)
+   ============================ */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.nav-icon {
-  font-size: 22px;
-  cursor: pointer;
-  color: #333;
-  transition: 0.2s;
-}
-
-.nav-icon:hover {
-  color: #5069ff;
-  transform: scale(1.1);
-}
-
-/* User info */
+/* User Info Container */
 .user-info {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
+/* Avatar Image */
 .avatar {
   width: 38px;
   height: 38px;
   border-radius: 50%;
+  object-fit: cover;
   border: 2px solid #5069ff;
 }
 
+/* User Name */
 .user-text {
   display: flex;
   flex-direction: column;
@@ -65,42 +63,78 @@
   color: #333;
 }
 
-.tenant-name {
-  font-size: 12px;
-  color: #555;
-}
-.user-info {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  gap: 10px;
-}
-
+/* ==============
+   TOOLS / ICONS
+   ============== */
 .nav-icon {
-  cursor: pointer;
   font-size: 22px;
-  margin-right: 15px;
+  cursor: pointer;
+  color: #333;
   transition: 0.2s;
 }
 
 .nav-icon:hover {
-  color: #4F46E5;
+  color: #5069ff;
+  transform: scale(1.1);
 }
 
-.avatar {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ddd;
+/* ============================
+   🔥 RESPONSIVE — TABLETS & MOBILE
+   ============================ */
+@media (max-width: 900px) {
+  .navbar-modern {
+    left: 0;                 /* sidebar مخفي → navbar يصبح full width */
+    padding: 0 20px;
+  }
 }
 
-.user-name {
-  font-weight: 600;
-  font-size: 15px;
+/* ============================
+   🔥 MOBILE VIEW — <= 768px
+   ============================ */
+@media (max-width: 768px) {
+
+  .navbar-modern {
+    left: 0;
+    height: 60px;
+    padding: 0 15px;
+    justify-content: flex-end;   /* كل العناصر تنتقل لليمين */
+  }
+
+  .empty-space {
+    display: none;               /* إخفاء الفراغ الزائد */
+  }
+
+  /* إلغاء النص حتى لا يضيق navbar */
+  .user-text {
+    display: none;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-right {
+    gap: 12px;
+  }
 }
 
-.tenant-name {
-  font-size: 13px;
-  color: #6b7280;
+/* ============================
+   🔥 SMALL MOBILE — <= 480px
+   ============================ */
+@media (max-width: 480px) {
+
+  .navbar-modern {
+    height: 55px;
+    padding: 0 12px;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-right {
+    gap: 8px;
+  }
 }

@@ -140,27 +140,39 @@
 .remove-admin-btn:hover {
   background: #c53030;
 }
-.logout-btn,.dashboard-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #4F46E5;
-  color: white;
+.admin-actions {
+  position: absolute;      /* ثابتة في أعلى الصفحة */
+  top: 20px;               /* المسافة من الأعلى */
+  right: 20px;             /* ضعها على اليمين بدلاً من اليسار */
+  display: flex;
+  gap: 12px;
+  z-index: 999;
+}
+
+.dashboard-btn,
+.logout-btn {
+  padding: 10px 18px;
   border: none;
-  padding: 10px 16px;
-  font-size: 14px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.2s;
+  font-size: 14px;
 }
 
-.logout-btn:hover,.dashboard-btn:hover {
-  background: #4338CA;
-}
-.admin-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 20px;
+.dashboard-btn {
+  background-color: #4a90e2;
+  color: white;
 }
 
+.dashboard-btn:hover {
+  background-color: #357ABD;
+}
+
+.logout-btn {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #d9363e;
+}

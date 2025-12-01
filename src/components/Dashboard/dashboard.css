@@ -519,3 +519,117 @@
   color: #8e8e8e;
   border: 1px solid #8e8e8e50;
 }
+/* ======================================
+   🔥 RESPONSIVE — TABLETS & MOBILE
+   ====================================== */
+
+/* ----------- Devices: <= 1024px ----------- */
+@media (max-width: 1024px) {
+
+  .dashboard-container {
+    padding: 20px;
+  }
+
+  /* السماح للبطاقات أن تأخذ كامل العرض */
+  .dashboard-section {
+    width: 100%;
+  }
+}
+
+/* ----------- Devices: <= 768px (Tablets & Phones) ----------- */
+@media (max-width: 768px) {
+
+  /* السماح للداشبورد بالتمدد */
+  .dashboard-container {
+    padding: 15px;
+    width: 100%;
+  }
+
+  /* الهيدر يصغر */
+  .dashboard-header h1 {
+    font-size: 1.9rem;
+    text-align: center;
+  }
+
+  .dashboard-header p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* الـ Section Header يصبح عمودياً */
+  .section-header {
+    padding: 18px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .section-title {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .section-stats {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* -------- TASK ROW -------- */
+  .task-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .task-main-info {
+    width: 100%;
+  }
+
+  .task-meta-info {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* الأزرار تذهب للأسفل بشكل جميل */
+  .task-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* ----------- Devices: <= 480px (Small Phones) ----------- */
+@media (max-width: 480px) {
+
+  .dashboard-header {
+    padding: 15px 0;
+    margin-bottom: 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .section-name {
+    font-size: 1.1rem;
+  }
+
+  .tasks-list {
+    padding: 15px;
+  }
+
+  .task-meta-info {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .task-actions {
+    justify-content: center;
+  }
+}

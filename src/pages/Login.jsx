@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import api from "../services/api";
 import './Login.css';
-import { FiEye, FiEyeOff, FiCheckCircle } from "react-icons/fi";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 function Login() {
 

@@ -116,3 +116,25 @@
     margin-left: 110px;
   }
 }
+/* ===========================
+   🔥 MOBILE RESPONSIVE FIX
+   =========================== */
+@media (max-width: 768px) {
+
+  /* اخفاء الـ Sidebar بالكامل */
+  .sidebar {
+    display: none;
+  }
+
+  /* navbar يأخذ عرض الشاشة */
+  .navbar {
+    left: 0;
+    width: 100%;
+  }
+
+  /* المحتوى يبدأ من اليسار بدون هامش */
+  .layout-content {
+    margin-left: 0;
+    padding-top: 90px; /* مساحة للـ navbar */
+  }
+}
