@@ -50,9 +50,9 @@ function App() {
   <Route path="/profile" element={<Profile />} />
 </Route>
 
-
-
-<Route path="/statistics" element={<Statistics />} />
+<Route element={<ProtectedRoute />}>
+  <Route path="/statistics" element={<Statistics />} />
+</Route>
 
         </Routes>
       </BrowserRouter>

@@ -115,9 +115,7 @@ useEffect(() => {
 </label>
 
 
-  <a href="/forgot-password" className="forgot-password">
-    Forgot password?
-  </a>
+  
 </div>
 
 
